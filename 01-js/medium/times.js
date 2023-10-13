@@ -8,5 +8,15 @@ Hint - use Date class exposed in JS
 */
 
 function calculateTime(n) {
-    return 0.01;
+  var sum=0;
+  var time1=new Date().getTime();
+  console.log(time1);
+  for(let i=1;i<=n;i++)
+    sum+=i;
+
+  var time2=new Date().getTime();
+  console.log(time2);
+  return (time2-time1)/1000;
 }
+console.log(calculateTime(1000000));
+
