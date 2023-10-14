@@ -5,18 +5,40 @@
  */
 
 
-function waitOneSecond() {
 
+function waitOneSecond() {
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve('After 1 second')
+    },1000);
+  });
 }
+var one=waitOneSecond();
 
 function waitTwoSecond() {
-
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve('After 2 second')
+    },2000);
+  });
 }
+var two=waitTwoSecond();
 
 function waitThreeSecond() {
-
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve('After 3 second')
+    },3000);
+  });
 }
+var three=waitThreeSecond();
 
 function calculateTime() {
-
+  var time=Date.now();
+Promise.all([one,two,three]).then((message)=>{
+  console.log((Date.now()-time)/1000);
+  console.log("Array is="+message);
+})
 }
+
+calculateTime();
