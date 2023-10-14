@@ -6,3 +6,19 @@ Can you make it so that it updates every second, and shows time in the following
  - HH:MM::SS (Eg. 13:45:23)
 
  - HH:MM::SS AM/PM (Eg 01:45:23 PM)
+
+ - 
+function three() {
+  let hours = new Date().getHours();
+  let minutes = new Date().getMinutes();
+  let seconds = new Date().getSeconds();
+  if(hours<12){
+  var str = hours + ":" + minutes + "::" + seconds+" AM";
+  console.log(str);
+  }
+  else{
+    var str = hours + ":" + minutes + "::" + seconds+" PM";
+    console.log(str);
+  }
+}
+setInterval(three, 1000);
